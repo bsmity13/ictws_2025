@@ -1,0 +1,64 @@
+---
+title: "HSF Exercise"
+author: "Brian J. Smith"
+date: "18 March 2025"
+output: 
+  html_document:
+    theme: default
+    css: "../exercises.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+
+Let's apply what we've learned about HSFs. Refer to the lecture slides and the walkthrough code (`03_HSF_walkthrough.R`) as a refresher. Also, use <a href="https://conservancy.umn.edu/bitstream/handle/11299/218272/AppA_HSF_examples.html" target="_blank" rel="noopener noreferrer">Appendix A of Fieberg et al. (2021)</a> as a guide for your code.
+
+I encourage you to use your own data for this exercise. I will be available while you are working to answer any questions.
+
+If you don't have your own data, you can use example data built into `amt`. You can access the fisher data and some covariate rasters like this:
+
+```{r amt_fisher, eval = FALSE}
+# Load `amt`
+library(amt)
+
+# Location data as 'track_xyt'
+dat <- amt_fisher
+
+# Habitat data as list
+hab <- amt_fisher_covar
+
+```
+
+We are not covering how to model multiple animals today, so for now,
+subset your data (or the fisher data) to just one animal. *Don't use Lupe!* Her data were used in Appendix A of Fieberg et al. (2021). Choose one of the other animals, and we can discuss how (or if) they differ from Lupe.
+
+## Instructions
+
+1. Load your data or the `amt` fisher data. Subset to a single individual.
+
+    * Recall that HSFs assume each point is independent and that all habitat is available.
+    * If you have high temporal resolution location data, you might want to subset to a coarser temporal resolution to maintain independence.
+
+2. Before you get started, consider your habitat variables. 
+
+    * Decide *a priori* whether each variable represents a resource, risk, or condition. 
+    * Make sure you distinguish between continuous and categorical (like landcover) variables.
+    * Include your thoughts about each variable as comments in your analysis script.
+    
+3. Fit a third-order HSF. *I.e.*, sample available points from within the home range of your individual.
+
+    * Make sure the form of each variable matches your *a priori* hypotheses about it from above (*i.e.*, are your continuous conditions modeled as parabolas?).
+    * Use the logistic regression approach by sampling a large number of available locations. Make sure to give the used locations a weight of 1 and the available locations large weights.
+    
+4. Plot the RSS (or log-RSS) for the range of each of your habitat variables.
+
+    * What does each plot tell you about the biology of your system?
+    * Be sure to include confidence intervals.
+
+
+<br>
+<hr>
+<br>
