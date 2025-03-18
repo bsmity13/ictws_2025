@@ -11,8 +11,8 @@ Otherwise, you can simply download a ZIP file of this repository. Click the gree
 
 ## Contents
 - ICTWS 2025 Workshop.pptx: The main PowerPoint with lectures for the day.
-- `Code Walkthroughs/` A folder containing separate R projects for the HSF module and SSF module. We will go through the code walkthroughs together in the workshop.
-- `Exercises/` A folder containing separate R projects for the HSF module and SSF module. These are suggested extra practice to get you working with your own data or sample data (provided).
+- `Code Walkthroughs/`: A folder containing separate R projects for the HSF module and SSF module. We will go through the code walkthroughs together in the workshop.
+- `Exercises/`: A folder containing separate R projects for the HSF module and SSF module. These are suggested extra practice to get you working with your own data or sample data (provided).
 
 ## Before the Workshop
 - Please make sure you have the latest version of R and RStudio installed on your laptop.
